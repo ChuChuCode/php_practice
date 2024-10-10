@@ -143,30 +143,71 @@
 		<button type="submit" name="user_signup" >Sign Up</button>
 	</form>
 	<?php
-		if (!isset($_GET["signup"])){
-			exit();
+		if (isset($_GET["signup"])){
+			$signupCheck=$_GET["signup"];
+			switch ($signupCheck){
+				case "empty":
+					echo "<p class='error'>You did not fill in all fields!</p>";
+					break;
+				case "char":
+					echo "<p class='error'>You used an invalid characters!</p>";
+					break;
+				case "email":
+					echo "<p class='error'>You used an invalid e-mail!</p>";
+					break;
+				case "sqlerror":
+					echo "<p class='error'>SQL has some problem. Contact the developer!</p>";
+					break;
+				case "success":
+					echo "<p class='success'>You have been signed up!</p>";
+					break;
+				default:
+					echo "<p class='error'>Unknown error!</p>";
+				}
 		}
-		$signupCheck=$_GET["signup"];
-		switch ($signupCheck){
-			case "empty":
-				echo "<p class='error'>You did not fill in all fields!</p>";
-				exit();
-			case "char":
-				echo "<p class='error'>You used an invalid characters!</p>";
-				exit();
-			case "email":
-				echo "<p class='error'>You used an invalid e-mail!</p>";
-				exit();
-			case "sqlerror":
-				echo "<p class='error'>SQL has some problem. Contact the developer!</p>";
-				exit();
-			case "success":
-				echo "<p class='success'>You have been signed up!</p>";
-				exit();
+		BreakLine();
+		// password hashing
+		echo "Password Check.";
+		$pwd = "test123";
+		$hashedpwd = password_hash($pwd,PASSWORD_DEFAULT);
+		if (password_verify($pwd,$hashedpwd)){
+			echo "Password is correct!";
 		}
+		BreakLine();
+		// Array 
+
+		// index array
+
+		$data = array("first","2nd");
+		$data[] = "Kerwin";
+		$data[] = "15";
+		array_push($data,12);
+		array_push($data,"Peter","Chu",0.2);
+		print_r($data);
+
+		BreakLine();
+		//associative array 
+		$data1 = array(
+			"first"=>"Kerwin",
+			"last"=>"Chu"
+			);
+		$data1["age"] = 29;
+		print_r($data1);
+		BreakLine();
+		echo " ".$data1["age"];
+
+		//multidimensional array
+		$data2 = array();
+		$data2[] = array(1,2,3);
+		$data2[] = "Kerwin";
+		BreakLine();
+		print_r($data2);
+		BreakLine();
+		print_r($data2[0]);
+		BreakLine();
+		echo $data2[0][1];
+
 	?>
-    
-<br>
 </body>
 
 </html>
