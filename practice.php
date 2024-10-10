@@ -8,7 +8,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<link rel="stylesheet" href="static/nav.css">
+<link rel="stylesheet" href="static/practice.css">
 <title>ChuChu</title>
 </head>
 
@@ -113,18 +113,58 @@
     ?>
 	<p>Insert into users table.</p>
 	<form method="POST" action="includes/Insert_users-inc.php">
-		<input type="text" name="first" placeholder="Firstname">
-		<br>
-		<input type="text" name="last" placeholder="Lastname">
-		<br>
-		<input type="text" name="email" placeholder="Email">
-		<br>
-		<input type="text" name="UserID" placeholder="User Name">
+		<?php
+			if (!isset($_GET["first"])){
+				echo "<input type='text' name='first' placeholder='Firstname'>";
+			}else{
+				$first = $_GET["first"];
+				echo "<input type='text' name='first' placeholder='Firstname' value='$first'>";
+			}
+			BreakLine();
+			if (!isset($_GET["last"])){
+				echo "<input type='text' name='last' placeholder='Lastname'>";
+			}else{
+				$last = $_GET["last"];
+				echo "<input type='text' name='last' placeholder='Lastname' value='$last'>";
+			}
+			BreakLine();
+			echo "<input type='text' name='email' placeholder='Email'>";
+			BreakLine();
+			if (!isset($_GET["UserID"])){
+				echo "<input type='text' name='UserID' placeholder='User Name'>";
+			}else{
+				$UserID = $_GET["UserID"];
+				echo "<input type='text' name='UserID' placeholder='User Name' value='$UserID'>";
+			}
+		?>
 		<br>
 		<input type="password" name="pwd" placeholder="Password">
 		<br>
 		<button type="submit" name="user_signup" >Sign Up</button>
 	</form>
+	<?php
+		if (!isset($_GET["signup"])){
+			exit();
+		}
+		$signupCheck=$_GET["signup"];
+		switch ($signupCheck){
+			case "empty":
+				echo "<p class='error'>You did not fill in all fields!</p>";
+				exit();
+			case "char":
+				echo "<p class='error'>You used an invalid characters!</p>";
+				exit();
+			case "email":
+				echo "<p class='error'>You used an invalid e-mail!</p>";
+				exit();
+			case "sqlerror":
+				echo "<p class='error'>SQL has some problem. Contact the developer!</p>";
+				exit();
+			case "success":
+				echo "<p class='success'>You have been signed up!</p>";
+				exit();
+		}
+	?>
     
 <br>
 </body>

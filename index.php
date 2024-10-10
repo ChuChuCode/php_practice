@@ -8,7 +8,6 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<link rel="stylesheet" href="static/nav.css">
 <title>ChuChu</title>
 </head>
 
