@@ -21,7 +21,7 @@
 		exit();
 	}
 	if (!filter_var($email,FILTER_VALIDATE_EMAIL)){
-		header("Location: ../practice.php?signup=email&first=$first&last=$last");
+		header("Location: ../practice.php?signup=email&first=$first&last=$last&UserID=$UserID");
 		exit();
 	}
 
