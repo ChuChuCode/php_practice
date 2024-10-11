@@ -8,7 +8,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<link rel="stylesheet" href="static/practice.css">
+<link rel="stylesheet" href="static/errorHandler.css">
 <title>ChuChu</title>
 </head>
 
@@ -43,6 +43,11 @@
         $str1 =  "The length of ".$name." is : ".strlen($name);
         echo $str1;
         BreakLine();
+
+		// php built-in functions. 
+		// See https://www.php.net/manual/en/funcref.php or 
+		// https://www.w3schools.com/php/php_functions.asp
+
         // word length
         echo str_word_count($str1);
         BreakLine();
@@ -55,6 +60,7 @@
         BreakLine();
         echo str_replace($name,"Kerwin",$str1);
     ?>
+
     <form method="GET">
         <input type="text" name="num1" placeholder="Number1">
         <input type="text" name="num2" placeholder="Number2">
