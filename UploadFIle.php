@@ -9,7 +9,7 @@
 <head>
 <meta charset="UTF-8">
 <link rel="stylesheet" href="static/errorHandler.css">
-<title>ChuChu</title>
+<title>ChuChu - Upload Page</title>
 </head>
 
 <body>
@@ -25,6 +25,7 @@
     ?>
 	<form action="./includes/upload-inc.php" method="post" enctype="multipart/form-data">
 		<input type="file" name="file">
+		<!-- <input type="file" name="file" accept="image/png, image/jpeg" /> -->
 		<button type="submit" name="upload_submit">Upload</button>
 	</form>
 	<?php

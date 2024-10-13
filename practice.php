@@ -9,7 +9,7 @@
 <head>
 <meta charset="UTF-8">
 <link rel="stylesheet" href="static/errorHandler.css">
-<title>ChuChu</title>
+<title>ChuChu - practice</title>
 </head>
 
 <body>

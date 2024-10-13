@@ -8,7 +8,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>ChuChu</title>
+<title>ChuChu Webpage</title>
 </head>
 
 <body>

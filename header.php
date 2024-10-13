@@ -8,5 +8,8 @@
         <a class="nav" href="./UploadFile.php">Upload File</a>
         <a class="nav" href="#">Collection</a>
         <a class="nav" href="#">About me</a>
+        <?php
+            if ()
+        ?>
     </nav>
 </header>
