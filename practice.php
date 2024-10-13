@@ -173,11 +173,11 @@
 		}
 		BreakLine();
 		// password hashing
-		echo "Password Check.";
+		echo "Password Check.<br>";
 		$pwd = "test123";
 		$hashedpwd = password_hash($pwd,PASSWORD_DEFAULT);
 		if (password_verify($pwd,$hashedpwd)){
-			echo "Password is correct!";
+			echo "<br>Password is correct!";
 		}
 		BreakLine();
 		// Array 
