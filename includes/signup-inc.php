@@ -31,7 +31,7 @@
 		(?,?,?,?,?);";
 	$stmt = mysqli_stmt_init($conn);
 	if (!mysqli_stmt_prepare($stmt,$sql)){
-		header("Location: ../index.php/?signup=sqlerror");
+		header("Location: ../index.php?signup=sqlerror");
 		exit();
 	} else {
 		mysqli_stmt_bind_param($stmt, "sssss", $first,$last,$email,$UserID,$pwd);
@@ -43,6 +43,6 @@
 	$sql1 = "INSERT INTO profile_image (userid,status,extension) VALUES (".
 			$user_info["user_id"].",0,NULL);";
 	mysqli_query($conn,$sql1);
-	header("Location: ../index.php/?signup=success");
+	header("Location: ../index.php?signup=success");
 	exit();
 	

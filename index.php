@@ -31,6 +31,7 @@
     ?>
     <?php
         // Show Login/Upload Message
+        // use foreach ($_GET as $key => $value) { }
         if (isset($_GET["login"])){
             $login_msg = $_GET["login"];
             switch ($login_msg){
@@ -112,8 +113,16 @@
                 Upload Profile : 
                 <input type="file" name="file" accept="image/png, image/jpeg, image/jpg"/>
                 <button type="submit" name="upload_submit">Upload</button>
-            </form>
-            <!--Logout-->
+            </form>';
+            // If had image then show delete
+            if ($user_info["status"] == 1){
+                echo 
+                '<form method="post" action="includes/deleteprofile-inc.php">
+                    <button type="submit" name="upload_delete">Delete Profile Image</button>
+                </form>';
+            }
+            echo
+            '<!--Logout-->
             <form method="post" action="includes/logout-inc.php">
                 <button type="submit" name="logout">Logout</button>
             </form>';

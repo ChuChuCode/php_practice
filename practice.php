@@ -212,7 +212,10 @@
 		print_r($data2[0]);
 		BreakLine();
 		echo $data2[0][1];
-
+		BreakLine();
+		// Search directory
+		$file_name = Glob('./*');
+		print_r($file_name);
 	?>
 </body>
 
